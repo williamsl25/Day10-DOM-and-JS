@@ -28,6 +28,10 @@ var story1 = document.getElementById('story1');
 
 //make text into array
 var story1Arr = story1.textContent.split(" ");
+// thanks to Paul Draper on stackOverflow for the tip about how to remove whitespace from an array http://stackoverflow.com/questions/20668872/remove-whitespace-only-array-elements
+story1Arr= story1Arr.filter(function(str) {
+    return /\S/.test(str);
+});
 var readTime = function(array){
   var result = array.length/wordsRead;
   if(result < 1){
@@ -38,12 +42,18 @@ var readTime = function(array){
 }
 var readTime = Math.round(readTime(story1Arr));
 document.getElementById('time1').innerHTML = readTime + " minutes";
+
+
 // ****************************************
 var story2 = document.getElementById('story2');
 // story2.textContent => returns the text of story2
 
 //make text into array
 var story2Arr = story2.textContent.split(" ");
+// thanks to Paul Draper on stackOverflow for the tip about how to remove whitespace from an array http://stackoverflow.com/questions/20668872/remove-whitespace-only-array-elements
+story2Arr= story2Arr.filter(function(str) {
+    return /\S/.test(str);
+});
 var readTime = function(array){
   var result = array.length/wordsRead;
   if(result < 1){
