@@ -8,10 +8,26 @@
 var wordsRead = 230;
 
 // can't figure out how to get just a selection of text??? For ex, I want to be able to separate into time it takes to read first story then how long it takes to read 2nd story.  Currently, it totals all text content and gives time
-var allText= document.body.textContent;
+// var allText= document.body.textContent;
+// // string
+// //make text into array
+// var textArr = allText.split(" ");
+// var readTime = function(array){
+//   var result = array.length/wordsRead;
+//   if(result < 1){
+//     return 1
+//   }
+//   return result;
+//   console.log(readTime)
+// }
+// var readTime = Math.round(readTime(textArr));
+// document.getElementById('time').innerHTML = readTime + " minutes";
+// *********************************************
+var story1 = document.getElementById('story1');
+// story2.textContent => returns the text of story2
 
 //make text into array
-var textArr = allText.split(" ");
+var story1Arr = story1.textContent.split(" ");
 var readTime = function(array){
   var result = array.length/wordsRead;
   if(result < 1){
@@ -20,5 +36,21 @@ var readTime = function(array){
   return result;
   console.log(readTime)
 }
-var readTime = Math.round(readTime(textArr));
-document.getElementById('time').innerHTML = readTime + " minutes";
+var readTime = Math.round(readTime(story1Arr));
+document.getElementById('time1').innerHTML = readTime + " minutes";
+// ****************************************
+var story2 = document.getElementById('story2');
+// story2.textContent => returns the text of story2
+
+//make text into array
+var story2Arr = story2.textContent.split(" ");
+var readTime = function(array){
+  var result = array.length/wordsRead;
+  if(result < 1){
+    return 1
+  }
+  return result;
+  console.log(readTime)
+}
+var readTime = Math.round(readTime(story2Arr));
+document.getElementById('time2').innerHTML = readTime + " minutes";
